@@ -17,9 +17,8 @@ public:
     node *head;
     int capacity;
     int currsize;
-    Stack(int c)
+    Stack()
     {
-        this->capacity = c;
         this->currsize = 0;
         head = nullptr;
     }
@@ -27,18 +26,18 @@ public:
     {
         return this->head == nullptr;
     }
-    bool isFull()
-    {
-        return this->currsize == this->capacity;
-    }
+    // bool isFull()
+    // {
+    //     return this->currsize == this->capacity;
+    // }
 
     void push(int data)
     {
-        if (this->currsize == this->capacity)
-        {
-            cout << "Overflow" << endl;
-            return;
-        }
+        // if (this->currsize == this->capacity)
+        // {
+        //     cout << "Overflow" << endl;
+        //     return;
+        // }
         node *newnode = new node(data);
         newnode->next = this->head;
         this->head = newnode;
@@ -77,7 +76,7 @@ public:
 };
 int main()
 {
-    Stack st(5);
+    Stack st; // here 5 is the capacity of stack not the size of the linked list.
     st.push(2);
     st.push(65);
     st.push(6);

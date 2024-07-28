@@ -1,37 +1,43 @@
-// copy a stack from one stack to another in the same way.
+// stack using the internal
 #include <iostream>
 #include <stack>
 using namespace std;
-stack<int> copystack(stack<int> &input)
-{
-    stack<int> temp;
-    while (!input.empty())
-    {
-        int curr = input.top();
-        input.pop();
-        temp.push(curr);
-    }
-    stack<int> result;
-    while (!temp.empty())
-    {
-        int current = temp.top();
-        temp.pop();
-        result.push(current);
-    }
-    return result;
-}
 int main()
 {
     stack<int> st;
-    st.push(78);
-    st.push(12);
-    st.push(37);
-    stack<int> res = copystack(st);
-    while (!res.empty())
+    if (!st.empty())
     {
-        int now = res.top();
-        res.pop();
-        cout << now << endl;
+        st.pop();
+    }
+    else
+    {
+        cout << "cannot pop from an empty stack.,please push some elements into the stack." << endl;
+    }
+    st.push(45);
+    st.push(12);
+    st.push(7);
+    cout << "we are now printing the top element of the stack." << endl;
+    if (!st.empty())
+    {
+        cout << "your top element of the stack is : " << st.top() << endl;
+    }
+    else
+    {
+        cout << "cannot find the element from an empty stack" << endl;
+    }
+    cout << "your stack is : " << endl;
+    stack<int> temp = st;
+    if (!temp.empty())
+    {
+        while (!temp.empty())
+        {
+            cout << temp.top() << endl;
+            temp.pop();
+        }
+    }
+    else
+    {
+        cout << "Stack is empty" << endl;
     }
     return 0;
 }

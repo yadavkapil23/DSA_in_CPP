@@ -54,11 +54,12 @@ public:
             return;
         }
 
-        Node *temp = front;
-        front = front->next;
+        Node *temp = front;  // Create a temporary pointer temp to hold the front node's address. This is necessary because we'll be updating front to point to the next node.
+        front = front->next; // Update front to point to the next node in the queue. This effectively removes the current front node from the queue.
 
         // If front becomes null, then rear should also be null
-        if (front == nullptr)
+        if (front == nullptr) // Check if the queue has become empty after removing the front node.
+                              // If true, update end to nullptr to indicate that the queue is now empty.
         {
             rear = nullptr;
         }

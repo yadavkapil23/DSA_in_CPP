@@ -57,21 +57,21 @@ string infixtopostfix(string s)
             }
             else
             {
-                while (!st.empty() && prec(st.top()) > prec(s[i]))
-                {                    // This starts a loop that continues while the stack is not empty and the precedence of the top of the stack is higher than the current character.
-                    res += st.top(); // This adds the top character of the stack to the result string.
-                    st.pop();        // This removes the top character from the stack.
+                while (!st.empty() && prec(st.top()) > prec(s[i])) // This loop continues as long as two conditions are true: The stack is not empty (!st.empty()).and  The precedence of the operator at the top of the stack is greater than the precedence of the current operator (prec(st.top()) > prec(s[i])).
+                {                                                  // This ensures that operators with higher precedence are processed before operators with lower precedence.
+                    res += st.top();
+                    st.pop(); // The operator at the top of the stack is added to the result string (res).
                 }
-                st.push(s[i]); // This pushes the current operator onto the stack.
+                st.push(s[i]); // Once all higher precedence operators have been removed and added to the result, the current operator is pushed onto the stack.
             }
         }
         while (!st.empty())
-        {                    // This starts a loop that continues while the stack is not empty.
-            res += st.top(); // This adds the top character of the stack to the result string.
-            st.pop();        // This removes the top character from the stack.
+        {
+            res += st.top(); // res += st.top();: This adds the character at the top of the stack to the end of the result string res.
+            st.pop();        // st.pop();: This removes the top element from the stack
         }
     }
-    return res;
+    return res; // After all operators have been popped from the stack and added to res, the function returns the complete postfix expression
 }
 int main()
 {

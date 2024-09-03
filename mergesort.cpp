@@ -14,7 +14,7 @@ void merge(int arr[], int l, int mid, int r) // function to merge the two halves
     {
         b[i] = arr[mid + 1 + i];
     }
-    int i = 0;               // i is the index for the first temporary array a (which holds elements from l to mid).
+    int i = 0;               // i is the index for t he first temporary array a (which holds elements from l to mid).
     int j = 0;               // j is the index for the second temporary array b (which holds elements from mid+1 to r).
     int k = l;               // k is the index for the main array arr where merged elements will be placed, starting from index l.
     while (i < n1 && j < n2) // This loop continues as long as there are elements in both a and b to be compared and merged. n1 is the length of array a, and n2 is the length of array b.

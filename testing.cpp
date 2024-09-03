@@ -1,32 +1,24 @@
-// insertion sort
-#include <bits/stdc++.h>
+#include <iostream>
+#include <queue>
 using namespace std;
 int main()
 {
-    int n;
-    cout << "Enter n : ";
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++)
+    queue<int> q;
+    cout << "we are creating a queue : " << endl;
+    q.push(23);
+    q.push(56);
+    q.push(67);
+    q.push(37);
+    q.push(19);
+    q.push(78);
+    cout << "Your Queue is : " << endl;
+    while (!q.empty())
     {
-        cout << "enter the " << i << " element : ";
-        cin >> arr[i];
+        cout << q.front() << endl;
+        q.pop();
     }
-    // now we are performing the insertion sort.
-    for (int i = 1; i < n; i++)
-    { // we assume that the first element is already sorted.
-        int temp = arr[i];
-        int j = i - 1;
-        while (j >= 0 && arr[j] > temp)
-        {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = temp;
-    }
-    cout << "your array after doing insertion sort is : " << endl;
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
+    q.pop();
+    q.pop();
+    cout << q.front() << endl;
+    return 0;
 }

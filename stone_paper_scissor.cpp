@@ -2,6 +2,8 @@
 #include <ctime>
 #include <cstdlib>
 using namespace std;
+
+/////////THIS IS GENERATING THE COMPUTER'S CHOICE
 char generate_computer_choice()
 {
     srand(time(0));
@@ -19,6 +21,8 @@ char generate_computer_choice()
         return 's';
     }
 }
+
+//////THIS WILL FIND OUT OUR RESULT
 void result(char user_choice, char computer_choice)
 {
     if (user_choice == computer_choice)
@@ -46,8 +50,8 @@ int main()
     std::cout << "Enter your choice (r for rock, p for paper, s for scissors): ";
     std::cin >> userChoice;
 
+    /////////HERE IT WILL PRINT THAT WHAT THE COMPUTER CHOSE.
     computer_choice = generate_computer_choice();
-
     std::cout << "Computer chose: ";
     if (computer_choice == 'r')
     {
@@ -62,6 +66,7 @@ int main()
         std::cout << "scissors" << std::endl;
     }
 
+    // IT WILL PRINT THE RESULT.
     result(userChoice, computer_choice);
     return 0;
 }

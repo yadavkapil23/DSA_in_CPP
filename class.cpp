@@ -6,7 +6,7 @@ public:
     string name;
     float price;
     int models;
-    Motors(){};
+    Motors() {};
     Motors(string n, float p, int m)
     {
         name = n;
